@@ -1,0 +1,19 @@
+POM: Is a Design Pattern
+DATA DRIVEN approach
+We Create Library : Generic Functions not Keyword Driven ,TDD
+===== HYBRID FW with POM (Single Responsible Principle)
+
+
+POM : Made By Martin Fowler
+Page:
+- For Every page in web/mobile app, we need to create separate page java class.
+- Never use Assertions in Page Class.
+- Page Actions need to provide the page behaviour.
+- Page Locators(BY) should be private and will be accessed via public page actions.
+-
+
+Test:
+- Have to use a test client : TestNG/Junit/Pytest/Nunit
+- Assertions should be written in Test Class
+- Never use Driver Methods/Api in Test Class
+- 
