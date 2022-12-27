@@ -29,7 +29,7 @@ public class LoginPage {
 	private By loginErrorMesg = By.cssSelector("div.alert.alert-danger.alert-dismissible");
 	
 	//4. create Page Actions
-	@Step("Getting Login Page Title.....")
+	@Step("Getting Login Page Title Value.....")
 	public String getLoginPageTitle() {
 		return eleUtil.doGetTitle(Constants.LOGIN_PAGE_TITLE, Constants.DEFAULT_TIME_OUT);
 		
