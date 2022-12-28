@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -64,7 +64,7 @@ public class DriverFactory {
 		
 		getDriver().manage().window().fullscreen();
 		getDriver().manage().deleteAllCookies();
-		getDriver().get(prop.getProperty("url"));
+	    openUrl(prop.getProperty("url"));
 		
 		return getDriver();
 		
@@ -154,7 +154,59 @@ public class DriverFactory {
 		return path;
 	 }
 	
+	 /**
+	 * Launch Url Method
+	 * @param url
+	 */
+	 
+	 public void openUrl(String url) {
+		try {
+		 if(url==null) {
+			 throw new Exception("Url is null");
+		 }
+		}catch(Exception e) {
+			
+		}
+		
+		 getDriver().get(url);
+	 }
+	 
+	 public void openUrl(URL url) {
+			try {
+			 if(url==null) {
+				 throw new Exception("Url is null");
+			 }
+			}catch(Exception e) {
+				
+			}
+			
+			 getDriver().navigate().to(url);
+		 }
+	 
+
+	 public void openUrl(String baseUrl, String path) {
+		try {
+		 if(baseUrl==null) {
+			 throw new Exception("baseUrl is null");
+		 }
+		}catch(Exception e) {
+			
+		}
+		//http://amazon.com/accpage/users.html
+		 getDriver().get(baseUrl+"/"+path);
+	 }
 	
+	 public void openUrl(String baseUrl, String path, String queryParam) {
+			try {
+			 if(baseUrl==null) {
+				 throw new Exception("baseUrl is null");
+			 }
+			}catch(Exception e) {
+				
+			}
+			//http://amazon.com/accpage/users.html?route=account/login
+			 getDriver().get(baseUrl+"/"+path+"?"+queryParam);
+		 }
 	
 	
 }
