@@ -3,7 +3,8 @@ package feature1;
 public class FeatureThree {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+		System.out.println("f3");
 
 	}
 
