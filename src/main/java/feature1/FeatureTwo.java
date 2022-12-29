@@ -1,11 +1,11 @@
 package feature1;
 
-public class FeatureOne {
+public class FeatureTwo {
 
 	public static void main(String[] args) {
-	
 		
-		System.out.println("feature one");
+		
+		System.out.println("f2");
 
 	}
 
